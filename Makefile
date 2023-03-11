@@ -21,4 +21,7 @@ test:
 server:
 	go run main.go
 
+mock:
+	mockgen -package mockdb -destination db/mock/store.go github.com/agilsyofian/minibank/db/sqlc Store
+
 .PHONY: createdb new_migration migrateup migratedown sqlc server
